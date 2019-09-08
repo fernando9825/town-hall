@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+<!--/*@thymesVar id="titulo" type="java.lang.String"*/-->
+
+<div th:replace="layout/layout :: navbar"></div>
+
+<div class="container">
+    <h1 th:text="${titulo}"></h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, omnis, quis? Consequatur doloremque ex labore obcaecati placeat qui, repudiandae. Animi aspernatur cumque excepturi magnam nesciunt non officia quas quisquam veritatis?</p>
+    <a th:href="@{/persona-formulario}" class="btn btn-primary">Registrar nueva persona</a>
+</div>
+
+
+
+
+
+<div th:replace="layout/layout :: scripts"></div>
+</body>
+</html>

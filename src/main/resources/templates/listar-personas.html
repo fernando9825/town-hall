@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+<!--/*@thymesVar id="titulo" type="java.lang.String"*/-->
+
+<div th:replace="layout/layout :: navbar"></div>
+
+<div class="container">
+    <h1 th:text="${titulo}"></h1>
+    <hr>
+
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">DUI</th>
+            <th scope="col">Nombres</th>
+            <th scope="col">Apellidos</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Departamento</th>
+            <th scope="col">Fecha</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--/*@thymesVar id="personas" type="java.util.List<com.fernando9825.townhall.models.entity.Persona>"*/-->
+        <tr th:each="persona : ${personas}">
+<!--            <th scope="row">1</th>-->
+            <td th:text="${persona.getDUI()}"></td>
+            <td th:text="${persona.getNombres()}"></td>
+            <td th:text="${persona.getApellidos()}"></td>
+            <td th:text="${persona.getEdad()}"></td>
+            <td th:text="${persona.getSexo() == 0} ? 'Femenino' : 'Masculino'"></td>
+            <td th:text="${persona.getDireccion()}"></td>
+            <td th:text="${persona.getDepartamento()}"></td>
+            <td th:text="${persona.getCreateAt()}"></td>
+        </tr>
+
+
+        <!--<tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>-->
+        </tbody>
+    </table>
+</div>
+
+<div th:replace="layout/layout :: scripts"></div>
+</body>
+</html>

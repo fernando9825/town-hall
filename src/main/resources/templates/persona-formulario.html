@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/layout :: head"></head>
+<body>
+<!--/*@thymesVar id="titulo" type="java.lang.String"*/-->
+
+<div th:replace="layout/layout :: navbar"></div>
+
+<div class="container">
+    <h1 th:text="${titulo}"></h1>
+    <hr>
+    <form th:action="@{/persona-formulario}" method="post">
+        <div class="form-group">
+            <label for="DUI">DUI</label>
+            <input type="text" class="form-control" id="DUI" placeholder="Ingrese número de documento único de identidad" required>
+        </div>
+        <div class="form-group">
+            <label for="nombres">Nombres</label>
+            <input type="text" class="form-control" id="nombres" placeholder="Ingrese nombres" required>
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" placeholder="Ingrese apellidos" required>
+        </div>
+        <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" value="18" th:min="18" th:max="110" th:value="18" required>
+        </div>
+        <div class="form-group">
+            <label for="sexo">Sexo</label>
+            <select name="sexo" id="sexo">
+                <option value="0">Masculino</option>
+                <option value="1">Femenino</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección</label>
+            <input type="text" class="form-control" id="direccion" placeholder="Ingrese dirección" required>
+        </div>
+        <div class="form-group">
+            <label for="departamento">Departamento</label>
+            <input type="text" class="form-control" id="departamento" placeholder="Ingrese departamento" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Correo electrónico</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nombre@ejemplo.com">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+
+
+
+
+<div th:replace="layout/layout :: scripts"></div>
+
+
+</body>
+</html>

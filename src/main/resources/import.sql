@@ -1,0 +1,1 @@
+INSERT INTO personas (`dui`, `nombres`, `apellidos`, `edad`, `sexo`, `direccion`, `departamento`, `create_at`) VALUES ("93939391-9", "Fernando Roman", "Ventura Alvarado", 21, 1, "Barrio San Francisco", "San Miguel", "2019-06-28");
